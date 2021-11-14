@@ -9,7 +9,7 @@
 
 ## SmartCart
 
-Based on laravel 8 and PHP 8 modern e-commerce system called SmartCart by Emre Bozkurt.
+Based on Laravel 8 and PHP 8 modern e-commerce system called SmartCart by Emre Bozkurt.
 
 ## Security Vulnerabilities
 
