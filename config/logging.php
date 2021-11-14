@@ -113,6 +113,13 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'local_db' => [
+            'driver' => 'custom',
+            'handler' => App\Logging\MySQLLoggingHandler::class,
+            'via' => App\Logging\MySQLCustomLogger::class,
+            'level' => 'debug',
+        ],
     ],
 
 ];

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\LogController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +23,9 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function () {
     Route::name('admin.')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        Route::prefix('settings')->group(function () {
+            Route::get('logs', [LogController::class, 'index'])->name('settings.logs');
+        });
     });
 });
