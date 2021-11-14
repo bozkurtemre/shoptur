@@ -20,3 +20,6 @@
 
 <!-- Theme Initialization Files -->
 <script src="{{ asset('admin/js/theme.init.js') }}"></script>
+
+<!-- Extra -->
+@yield('extra-scripts')

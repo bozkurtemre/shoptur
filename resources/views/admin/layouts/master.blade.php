@@ -14,8 +14,8 @@
         <!-- start: header -->
         <header class="header">
             <div class="logo-container">
-                <a href="../4.0.0" class="logo">
-                    <img src="img/logo.png" width="75" height="35" alt="Porto Admin" />
+                <a href="{{ route('admin.dashboard') }}" class="logo">
+                    <img src="{{ asset('admin/img/logo.png') }}" width="75" height="35" alt="Porto Admin" />
                 </a>
 
                 <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
@@ -105,8 +105,8 @@
                                     <li>
                                         <a href="#" class="clearfix">
                                             <figure class="image">
-                                                <img src="img/!sample-user.jpg" alt="Joseph Doe Junior"
-                                                    class="rounded-circle" />
+                                                <img src="{{ asset('admin/img/!sample-user.jpg') }}"
+                                                    alt="Joseph Doe Junior" class="rounded-circle" />
                                             </figure>
                                             <span class="title">Joseph Doe</span>
                                             <span class="message">Lorem ipsum dolor sit.</span>
@@ -179,8 +179,8 @@
                 <div id="userbox" class="userbox">
                     <a href="#" data-bs-toggle="dropdown">
                         <figure class="profile-picture">
-                            <img src="img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle"
-                                data-lock-picture="img/!logged-user.jpg" />
+                            <img src="{{ asset('admin/img/!logged-user.jpg') }}" alt="Joseph Doe" class="rounded-circle"
+                                data-lock-picture="{{ asset('admin/img/!logged-user.jpg') }}" />
                         </figure>
                         <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
                             <span class="name">John Doe Junior</span>
@@ -217,113 +217,21 @@
 
         <div class="inner-wrapper">
             <!-- start: sidebar -->
-            <aside id="sidebar-left" class="sidebar-left">
-
-                <div class="sidebar-header">
-                    <div class="sidebar-title">
-                        Navigation
-                    </div>
-                    <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed"
-                        data-target="html" data-fire-event="sidebar-left-toggle">
-                        <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
-                    </div>
-                </div>
-
-                <div class="nano">
-                    <div class="nano-content">
-                        <nav id="menu" class="nav-main" role="navigation">
-
-                            <ul class="nav nav-main">
-                                <li>
-                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">
-                                        <i class="bx bx-home-alt" aria-hidden="true"></i>
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                        <hr class="separator" />
-
-                        <div class="sidebar-widget widget-stats">
-                            <div class="widget-header">
-                                <h6>Company Stats</h6>
-                            </div>
-                            <div class="widget-content">
-                                <ul>
-                                    <li>
-                                        <span class="stats-title">Stat 1</span>
-                                        <span class="stats-complete">85%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-primary progress-without-number"
-                                                role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                                aria-valuemax="100" style="width: 85%;">
-                                                <span class="sr-only">85% Complete</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="stats-title">Stat 2</span>
-                                        <span class="stats-complete">70%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-primary progress-without-number"
-                                                role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                                aria-valuemax="100" style="width: 70%;">
-                                                <span class="sr-only">70% Complete</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="stats-title">Stat 3</span>
-                                        <span class="stats-complete">2%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-primary progress-without-number"
-                                                role="progressbar" aria-valuenow="2" aria-valuemin="0"
-                                                aria-valuemax="100" style="width: 2%;">
-                                                <span class="sr-only">2% Complete</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        // Maintain Scroll Position
-                            if (typeof localStorage !== 'undefined') {
-                                if (localStorage.getItem('sidebar-left-position') !== null) {
-                                    var initialPosition = localStorage.getItem('sidebar-left-position'),
-                                        sidebarLeft = document.querySelector('#sidebar-left .nano-content');
-
-                                    sidebarLeft.scrollTop = initialPosition;
-                                }
-                            }
-                    </script>
-
-                </div>
-
-            </aside>
+            @include('admin.layouts.sidebar')
             <!-- end: sidebar -->
 
-            <section role="main" class="content-body">
+            <section role="main" class="content-body @yield('body-class')">
                 <header class="page-header">
-                    <h2>Blank Page</h2>
+                    <h2 id="page-header-title"></h2>
 
                     <div class="right-wrapper text-end" style="margin-right: 25px;">
-                        <ol class="breadcrumbs">
+                        <ol class="breadcrumbs" id="nav-alt-tab">
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     <i class="bx bx-home-alt"></i>
                                 </a>
                             </li>
-
-                            <li><span>Pages</span></li>
-
-                            <li><span>Blank Page</span></li>
-
                         </ol>
-
                     </div>
                 </header>
 
