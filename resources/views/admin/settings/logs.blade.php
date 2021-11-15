@@ -13,7 +13,7 @@
                     <label>Tip:</label>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link active" data-bs-target="#all" data-bs-toggle="tab">Tümü</button>
+                    <button class="nav-link active" data-bs-target="#warning" data-bs-toggle="tab">Uyarılar</button>
                 </li>
                 <li class="nav-item">
                     <button class="nav-link" data-bs-target="#errors" data-bs-toggle="tab">Hatalar</button>
@@ -25,17 +25,17 @@
 
 <section class="card">
     <div class="card-body tab-content">
-        <div id="all" class="tab-pane active">
+        <div id="warning" class="tab-pane active">
             <table class="table table-striped table-no-more table-bordered mb-0">
                 <thead>
                     <tr>
-                        <th style="width: 10%"><span class="font-weight-normal text-5">Tip</span></th>
-                        <th style="width: 15%"><span class="font-weight-normal text-5">Tarih</span></th>
-                        <th><span class="font-weight-normal text-5">Mesaj</span></th>
+                        <th style="width: 10%"><span class="font-weight-normal text-4">Tip</span></th>
+                        <th style="width: 15%"><span class="font-weight-normal text-4">Tarih</span></th>
+                        <th><span class="font-weight-normal text-4">Mesaj</span></th>
                     </tr>
                 </thead>
                 <tbody class="log-viewer">
-                    @foreach ($logs as $log)
+                    @foreach ($custom_logs as $log)
                     <tr>
                         <td class="pt-3 pb-3">
                             <i class="fas fa-info fa-fw text-info text-5 va-middle"></i>
@@ -56,23 +56,23 @@
             <table class="table table-striped table-no-more table-bordered mb-0">
                 <thead>
                     <tr>
-                        <th style="width: 10%"><span class="font-weight-normal text-5">Tip</span></th>
-                        <th style="width: 15%"><span class="font-weight-normal text-5">Tarih</span></th>
-                        <th><span class="font-weight-normal text-5">Mesaj</span></th>
+                        <th style="width: 10%"><span class="font-weight-normal text-4">Tip</span></th>
+                        <th style="width: 15%"><span class="font-weight-normal text-4">Tarih</span></th>
+                        <th><span class="font-weight-normal text-4">Mesaj</span></th>
                     </tr>
                 </thead>
                 <tbody class="log-viewer">
-                    @foreach ($logs->where('level_name', 'ERROR') as $log)
+                    @foreach ($laravel_logs->where('level', 'error') as $log)
                     <tr>
                         <td class="pt-3 pb-3">
                             <i class="fas fa-times-circle fa-fw text-danger text-5 va-middle"></i>
-                            <span class="va-middle">{{ $log->level_name }}</span>
+                            <span class="va-middle">{{ $log->level }}</span>
                         </td>
                         <td class="pt-3 pb-3">
-                            {{ $log->created_at }}
+                            {{ $log->date }}
                         </td>
                         <td class="pt-3 pb-3">
-                            {{ $log->message }}
+                            {{ $log->context->message }}
                         </td>
                     </tr>
                     @endforeach
