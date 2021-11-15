@@ -10,7 +10,7 @@
 <script src="{{ asset('admin/vendor/jquery-placeholder/jquery.placeholder.js') }}"></script>
 
 <!-- Specific Page Vendor -->
-@yield('scripts')
+@yield('js')
 
 <!-- Theme Base, Components and Settings -->
 <script src="{{ asset('admin/js/theme.js') }}"></script>
@@ -22,4 +22,4 @@
 <script src="{{ asset('admin/js/theme.init.js') }}"></script>
 
 <!-- Extra -->
-@yield('extra-scripts')
+@yield('extra-js')

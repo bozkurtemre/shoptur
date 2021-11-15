@@ -2,7 +2,7 @@
 
     <div class="sidebar-header">
         <div class="sidebar-title">
-            Navigation
+            Navigasyon
         </div>
         <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed" data-target="html"
             data-fire-event="sidebar-left-toggle">
@@ -25,8 +25,8 @@
 
                     <!-- Products -->
                     <li class="nav-parent">
-                        <a class="nav-link" href="javascript:void(0)">
-                            <i class="bx bx-store" aria-hidden="true" id="active-parent-tab"></i>
+                        <a class="nav-link parent-tab" href="javascript:void(0)">
+                            <i class="bx bx-store" aria-hidden="true"></i>
                             <span>Mağaza</span>
                         </a>
                         <ul class="nav nav-children">
