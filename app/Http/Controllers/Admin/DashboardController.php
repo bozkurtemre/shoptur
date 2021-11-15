@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        Log::channel('local_db')->info("Anasayfa görüntülendi.");
+        //  Log::channel('local_db')->info("Anasayfa görüntülendi.");
         return view('admin.dashboard');
     }
 }

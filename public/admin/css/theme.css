@@ -13173,7 +13173,7 @@ body > .loading-overlay {
 .bounce-loader .bounce3 {
 	-webkit-animation: 1.4s ease-in-out 0s normal both infinite running bouncedelay;
 	        animation: 1.4s ease-in-out 0s normal both infinite running bouncedelay;
-	background-color: #CCC;
+	background-color: rgb(0, 136, 204);
 	border-radius: 100%;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 	display: inline-block;

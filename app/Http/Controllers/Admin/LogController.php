@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Models\Log as LogModel;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Models\Log as LogModel;
+use Jackiedo\LogReader\Facades\LogReader;
 
 class LogController extends Controller
 {
     public function index()
     {
-        Log::channel('local_db')->info("Sistem Log görüntülendi.");
-        return view('admin.settings.logs', ['logs' => LogModel::limit(15)->get()]);
+        return view('admin.settings.logs', ['laravel_logs' => LogReader::paginate(15), 'custom_logs' => LogModel::paginate(15)]);
     }
 }

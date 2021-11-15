@@ -23,6 +23,31 @@
                         </a>
                     </li>
 
+                    <!-- Products -->
+                    <li class="nav-parent">
+                        <a class="nav-link" href="javascript:void(0)">
+                            <i class="bx bx-store" aria-hidden="true" id="active-parent-tab"></i>
+                            <span>Mağazam</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="javascript:void(0)">
+                                    Ürünler
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript:void(0)">
+                                    Markalar
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript:void(0)">
+                                    Kategoriler
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <!-- Settings -->
                     <li class="nav-parent">
                         <a class="nav-link parent-tab" href="javascript:void(0)">
@@ -45,12 +70,12 @@
 
             <div class="sidebar-widget widget-stats">
                 <div class="widget-header">
-                    <h6>Company Stats</h6>
+                    <h6>Özet</h6>
                 </div>
                 <div class="widget-content">
                     <ul>
                         <li>
-                            <span class="stats-title">Stat 1</span>
+                            <span class="stats-title">Tamamlanan Sipariş</span>
                             <span class="stats-complete">85%</span>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary progress-without-number"
@@ -61,7 +86,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="stats-title">Stat 2</span>
+                            <span class="stats-title">Onay Bekleyen Sipariş</span>
                             <span class="stats-complete">70%</span>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary progress-without-number"
@@ -72,7 +97,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="stats-title">Stat 3</span>
+                            <span class="stats-title">İptal Edilen Sipariş</span>
                             <span class="stats-complete">2%</span>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary progress-without-number"
@@ -81,6 +106,27 @@
                                     <span class="sr-only">2% Complete</span>
                                 </div>
                             </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-widget widget-stats">
+                <div class="widget-header">
+                    <h6>Yazılım</h6>
+                </div>
+                <div class="widget-content">
+                    <ul>
+                        <li>
+                            <span class="stats-title">SmartCart</span>
+                            <span class="stats-complete">{{ env('APP_VER') }}</span>
+                        </li>
+                        <li>
+                            <span class="stats-title">PHP</span>
+                            <span class="stats-complete">{{ phpversion() }}</span>
+                        </li>
+                        <li>
+                            <span class="stats-title">Framework</span>
+                            <span class="stats-complete">{{ app()->version() }}</span>
                         </li>
                     </ul>
                 </div>
