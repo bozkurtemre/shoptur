@@ -8,6 +8,7 @@
 <script src="{{ asset('admin/vendor/nanoscroller/nanoscroller.js') }}"></script>
 <script src="{{ asset('admin/vendor/magnific-popup/jquery.magnific-popup.js') }}"></script>
 <script src="{{ asset('admin/vendor/jquery-placeholder/jquery.placeholder.js') }}"></script>
+<script src="{{ asset('admin/vendor/toastr/toastr.min.js') }}"></script>
 
 <!-- Specific Page Vendor -->
 @yield('js')

@@ -46,7 +46,7 @@
                                 <td>
                                     <a href="javascript:void(0)" class="on-default edit-row btn-sm btn-primary"><i
                                             class="fas fa-pencil-alt"></i></a>
-                                    <a href="#deleteConfirm"
+                                    <a href="#deleteConfirm" onclick="loadDeleteModal('{{ $category->id }}');"
                                         class="on-default remove-row modal-with-zoom-anim ws-normal btn-sm btn-danger"><i
                                             class="far fa-trash-alt"></i></a>
                                 </td>
@@ -74,7 +74,8 @@
                             <footer class="card-footer">
                                 <div class="row">
                                     <div class="col-md-12 text-end">
-                                        <button class="btn btn-primary modal-confirm">Evet</button>
+                                        <a href="javascript:void(0)" id="delete-modal-confirm-btn"><button
+                                                class="btn btn-primary">Evet</button></a>
                                         <button class="btn btn-default modal-dismiss">Vazgeç</button>
                                     </div>
                                 </div>
@@ -95,6 +96,5 @@
 <script src="{{ asset('admin/vendor/datatables/media/js/dataTables.bootstrap5.min.js') }}"></script>
 @endsection
 @section('extra-js')
-<script src="{{ asset('admin/js/examples/examples.datatables.default.js') }}"></script>
-<script src="{{ asset('admin/js/examples/examples.modals.js') }}"></script>
+<script src="{{ asset('admin/js/pages/categories.js') }}"></script>
 @endsection
