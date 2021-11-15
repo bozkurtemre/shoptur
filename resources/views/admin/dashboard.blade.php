@@ -269,7 +269,7 @@
     <!-- end: page -->
 </section>
 @endsection
-@section('scripts')
+@section('js')
 <script src="{{ asset('admin/vendor/jquery-ui/jquery-ui.js') }}"></script>
 <script src="{{ asset('admin/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js') }}"></script>
 <script src="{{ asset('admin/vendor/jquery-appear/jquery.appear.js') }}"></script>
@@ -287,6 +287,6 @@
 <script src="{{ asset('admin/vendor/gauge/gauge.js') }}"></script>
 <script src="{{ asset('admin/vendor/liquid-meter/liquid.meter.js') }}"></script>
 @endsection
-@section('extra-scripts')
+@section('extra-js')
 <script src="{{ asset('admin/js/examples/examples.dashboard.js') }}"></script>
 @endsection
