@@ -23,7 +23,7 @@
                         </a>
                     </li>
 
-                    <!-- Products -->
+                    <!-- Store -->
                     <li class="nav-parent">
                         <a class="nav-link parent-tab" href="javascript:void(0)">
                             <i class="bx bx-store" aria-hidden="true"></i>

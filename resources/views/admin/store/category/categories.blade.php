@@ -13,42 +13,75 @@
             <section class="card">
                 <header class="card-header">
                     <div class="card-actions">
-                        <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        <a href="javascript:void(0)" class="card-action card-action-toggle" data-card-toggle></a>
                     </div>
                     <h2 class="card-title">Kategoriler</h2>
                 </header>
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <button class="btn btn-primary">Ekle <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
                     <table class="table table-bordered table-striped mb-0" id="datatable-default">
                         <thead>
                             <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th>Platform(s)</th>
-                                <th class="d-lg-none">Engine version</th>
-                                <th class="d-lg-none">CSS grade</th>
+                                <th>Ad</th>
+                                <th>Üst Kategori</th>
+                                <th>Sıra</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($categories as $category)
                             <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 4.0
+                                <td>{{ $category->name }}</td>
+                                <td>{{ isset($category->parent->name) ? $category->parent->name : "Yok" }}</td>
+                                <td>{{ $category->seq }}</td>
+                                <td><i class='bx bxs-circle' style="color: {{ $category->status == 1 ? " green;"
+                                        : "red;" }}"></i> {{ $category->status == 1 ? "Aktif" : "Pasif" }}</td>
+                                <td>
+                                    <a href="javascript:void(0)" class="on-default edit-row btn-sm btn-primary"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a href="#deleteConfirm"
+                                        class="on-default remove-row modal-with-zoom-anim ws-normal btn-sm btn-danger"><i
+                                            class="far fa-trash-alt"></i></a>
                                 </td>
-                                <td>Win 95+</td>
-                                <td class="center d-lg-none">4</td>
-                                <td class="center d-lg-none">X</td>
                             </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 5.0
-                                </td>
-                                <td>Win 95+</td>
-                                <td class="center d-lg-none">5</td>
-                                <td class="center d-lg-none">C</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
+
+                    <!-- Delete Confirm Modal -->
+                    <div id="deleteConfirm" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+                        <section class="card">
+                            <header class="card-header">
+                                <h2 class="card-title">Emin Misiniz?</h2>
+                            </header>
+                            <div class="card-body">
+                                <div class="modal-wrapper">
+                                    <div class="modal-icon">
+                                        <i class="fas fa-question-circle"></i>
+                                    </div>
+                                    <div class="modal-text">
+                                        <p class="mb-0">Bu kategoriyi silmek istediğinizden emin misiniz?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <div class="row">
+                                    <div class="col-md-12 text-end">
+                                        <button class="btn btn-primary modal-confirm">Evet</button>
+                                        <button class="btn btn-default modal-dismiss">Vazgeç</button>
+                                    </div>
+                                </div>
+                            </footer>
+                        </section>
+                    </div>
+
                 </div>
             </section>
         </div>
@@ -63,4 +96,5 @@
 @endsection
 @section('extra-js')
 <script src="{{ asset('admin/js/examples/examples.datatables.default.js') }}"></script>
+<script src="{{ asset('admin/js/examples/examples.modals.js') }}"></script>
 @endsection
