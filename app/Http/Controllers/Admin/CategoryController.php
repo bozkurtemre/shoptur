@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view('admin.store.category.categories', ['categories' => $this->category->index()]);
+        return view('admin.store.category.categories-new', ['categories' => $this->category->index()]);
     }
 
     public function create()
@@ -42,8 +42,14 @@ class CategoryController extends Controller
         //
     }
 
-    public function destroy(Category $category)
+    public function status(Category $category)
     {
         //
+    }
+
+    public function destroy(Category $category)
+    {
+        $category->delete();
+        return redirect()->back();
     }
 }

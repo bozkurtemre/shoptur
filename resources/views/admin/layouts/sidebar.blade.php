@@ -41,7 +41,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{ route('admin.store.categories') }}">
+                                <a class="nav-link" href="{{ route('admin.categories') }}">
                                     Kategoriler
                                 </a>
                             </li>
@@ -66,7 +66,7 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="{{ route('admin.settings.logs') }}">
+                                <a class="nav-link" href="{{ route('admin.logs') }}">
                                     Sistem Log
                                 </a>
                             </li>

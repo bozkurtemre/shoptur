@@ -25,10 +25,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::prefix('store')->group(function () {
-        Route::get('categories', [CategoryController::class, 'index'])->name('store.categories');
+        Route::get('categories', [CategoryController::class, 'index'])->name('categories');
+        Route::get('category/delete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
     });
 
     Route::prefix('settings')->group(function () {
-        Route::get('logs', [LogController::class, 'index'])->name('settings.logs');
+        Route::get('logs', [LogController::class, 'index'])->name('logs');
     });
 });
