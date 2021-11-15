@@ -190,8 +190,8 @@
                             <img src="{{ asset('admin/img/!logged-user.jpg') }}" alt="Joseph Doe" class="rounded-circle"
                                 data-lock-picture="{{ asset('admin/img/!logged-user.jpg') }}" />
                         </figure>
-                        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-                            <span class="name">John Doe Junior</span>
+                        <div class="profile-info">
+                            <span class="name">Test User</span>
                             <span class="role">Administrator</span>
                         </div>
 
@@ -204,11 +204,6 @@
                             <li>
                                 <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i
                                         class="bx bx-user-circle"></i> My Profile</a>
-                            </li>
-                            <li>
-                                <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i
-                                        class="bx bx-lock"></i>
-                                    Lock Screen</a>
                             </li>
                             <li>
                                 <a role="menuitem" tabindex="-1" href="pages-signin.html"><i

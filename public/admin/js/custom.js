@@ -41,7 +41,3 @@ function setNavigation() {
         }
     });
 }
-
-function changeTitle(title) {
-    document.title = title;
-}
