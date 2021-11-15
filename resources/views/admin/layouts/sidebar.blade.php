@@ -27,7 +27,7 @@
                     <li class="nav-parent">
                         <a class="nav-link" href="javascript:void(0)">
                             <i class="bx bx-store" aria-hidden="true" id="active-parent-tab"></i>
-                            <span>Mağazam</span>
+                            <span>Mağaza</span>
                         </a>
                         <ul class="nav nav-children">
                             <li>
@@ -41,10 +41,20 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="javascript:void(0)">
+                                <a class="nav-link" href="{{ route('admin.store.categories') }}">
                                     Kategoriler
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+
+                    <!-- Customize -->
+                    <li class="nav-parent">
+                        <a class="nav-link parent-tab" href="javascript:void(0)">
+                            <i class="bx bx-customize" aria-hidden="true"></i>
+                            <span>Özelleştir</span>
+                        </a>
+                        <ul class="nav nav-children">
                         </ul>
                     </li>
 
