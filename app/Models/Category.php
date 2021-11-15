@@ -18,7 +18,7 @@ class Category extends Model
         'description',
         'image',
         'status',
-        'popular',
+        'seq',
         'meta_title',
         'meta_desc',
         'meta_keywords',
@@ -34,6 +34,11 @@ class Category extends Model
     }
 
     public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+    public function children()
     {
         return $this->hasMany(Category::class);
     }
