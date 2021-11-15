@@ -48,6 +48,21 @@
                         </ul>
                     </li>
 
+                    <!-- Shipping -->
+                    <li class="nav-parent">
+                        <a class="nav-link parent-tab" href="javascript:void(0)">
+                            <i class="bx bx-package" aria-hidden="true"></i>
+                            <span>Kargo</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Firmalar
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <!-- Customize -->
                     <li class="nav-parent">
                         <a class="nav-link parent-tab" href="javascript:void(0)">

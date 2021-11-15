@@ -15,7 +15,7 @@ class CategoryRepository
 
     public function index()
     {
-        return $this->category->orderBy('id', 'DESC')->get();
+        return $this->category->get();
     }
 
     public function store($request)

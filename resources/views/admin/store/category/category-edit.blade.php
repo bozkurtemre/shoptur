@@ -17,13 +17,14 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-3">
-                    <button id="addToTable" class="btn btn-primary">Ekle <i class="fas fa-plus"></i></button>
+                    <button class="btn btn-primary">Ekle <i class="fas fa-plus"></i></button>
                 </div>
             </div>
         </div>
         <table class="table table-bordered table-striped mb-0" id="datatable-categories">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Ad</th>
                     <th>Üst Kategori</th>
                     <th>Sıra</th>
@@ -34,14 +35,15 @@
             <tbody>
                 @foreach ($categories as $category)
                 <tr data-item-id="{{ $category->id }}">
+                    <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>{{ isset($category->parent->name) ? $category->parent->name : "Yok" }}</td>
                     <td>{{ $category->seq }}</td>
                     <td><i class='bx bxs-circle' style="color: {{ $category->status == 1 ? " green;" : "red;" }}"></i>
                         {{ $category->status == 1 ? "Aktif" : "Pasif" }}</td>
                     <td>
-                        <a class="on-default btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="#deleteConfirm" class="modal-with-zoom-anim btn-sm btn-danger on-default remove-row"><i
+                        <a class="btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="javascript::void(0)" class="btn-sm btn-danger remove-row"><i
                                 class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
@@ -52,7 +54,7 @@
 </section>
 
 <!-- Delete Confirm Modal -->
-<div id="deleteConfirm" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+<div id="deleteDialog" class="modal-block modal-block-primary mfp-hide">
     <section class="card">
         <header class="card-header">
             <h2 class="card-title">Emin Misiniz?</h2>

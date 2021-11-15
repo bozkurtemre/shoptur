@@ -23,5 +23,15 @@ class CategorySeeder extends Seeder
             'name' => 'Akıllı Telefon',
             'seq' => '2'
         ]);
+        Category::create([
+            'parent_id' => 2,
+            'name' => 'Android',
+            'seq' => '3'
+        ]);
+        Category::create([
+            'parent_id' => 2,
+            'name' => 'IOS',
+            'seq' => '4'
+        ]);
     }
 }

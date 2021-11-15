@@ -7,7 +7,7 @@
         options: {
             table: '#datatable-categories',
             dialog: {
-                wrapper: '#deleteConfirm',
+                wrapper: '#deleteDialog',
                 cancelButton: '#deleteCancel',
                 confirmButton: '#deleteConfirm',
             }
@@ -71,7 +71,16 @@
                     $.magnificPopup.open({
                         items: {
                             src: _self.options.dialog.wrapper,
-                            type: 'inline'
+                            type: 'inline',
+                            fixedContentPos: false,
+                            fixedBgPos: true,
+                            overflowY: 'auto',
+                            closeBtnInside: true,
+                            preloader: false,
+                            midClick: true,
+                            removalDelay: 300,
+                            mainClass: 'my-mfp-zoom-in',
+                            modal: true
                         },
                         preloader: false,
                         modal: true,
@@ -79,18 +88,17 @@
                             change: function () {
                                 _self.dialog.$confirm.on('click', function (e) {
                                     e.preventDefault();
-
                                     $.ajax({
-                                        url: '/',
+                                        url: '/admin/store/category/delete/' + itemId,
                                         method: 'GET',
-                                        data: {
-                                            id: itemId
-                                        },
-                                        success: function () {
+                                        success: function (data) {
+                                            toastr.success(data.message, 'SmartCart');
                                             _self.rowRemove($row);
+                                        },
+                                        error: function () {
+                                            toastr.error(data.message, 'SmartCart');
                                         }
                                     });
-
                                     $.magnificPopup.close();
                                 });
                             },
@@ -109,7 +117,6 @@
             return this;
         },
 
-        // functions
         rowRemove: function ($row) {
             this.datatable.row($row.get(0)).remove().draw();
         },
@@ -117,33 +124,6 @@
 
     $(function () {
         datatableInit.initialize();
-    });
-
-    $('.modal-with-zoom-anim').magnificPopup({
-        type: 'inline',
-
-        fixedContentPos: false,
-        fixedBgPos: true,
-
-        overflowY: 'auto',
-
-        closeBtnInside: true,
-        preloader: false,
-
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-zoom-in',
-        modal: true
-    });
-
-    $(document).on('click', '.modal-dismiss', function (e) {
-        e.preventDefault();
-        $.magnificPopup.close();
-    });
-
-    $(document).on('click', '.modal-confirm', function (e) {
-        e.preventDefault();
-        $.magnificPopup.close();
     });
 
 }).apply(this, [jQuery]);
