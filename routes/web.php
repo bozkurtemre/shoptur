@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LogController;
 use Illuminate\Support\Facades\Auth;
@@ -20,12 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->group(function () {
-    Route::name('admin.')->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::prefix('settings')->group(function () {
-            Route::get('logs', [LogController::class, 'index'])->name('settings.logs');
-        });
+    Route::prefix('store')->group(function () {
+        Route::get('categories', [CategoryController::class, 'index'])->name('store.categories');
+    });
+
+    Route::prefix('settings')->group(function () {
+        Route::get('logs', [LogController::class, 'index'])->name('settings.logs');
     });
 });
