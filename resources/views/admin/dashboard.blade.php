@@ -172,11 +172,6 @@
         <div class="col-xl-12">
             <section class="card">
                 <header class="card-header card-header-transparent">
-                    <div class="card-actions">
-                        <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-                    </div>
-
                     <h2 class="card-title">Son Siparişler</h2>
                 </header>
                 <div class="card-body">
@@ -206,10 +201,6 @@
         <div class="col-lg-12 col-xl-6">
             <section class="card">
                 <header class="card-header card-header-transparent">
-                    <div class="card-actions">
-                        <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-                    </div>
                     <h2 class="card-title">Son Aktiviteler</h2>
                 </header>
                 <div class="card-body">
@@ -234,10 +225,6 @@
         <div class="col-lg-12 col-xl-6">
             <section class="card">
                 <header class="card-header card-header-transparent">
-                    <div class="card-actions">
-                        <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-                    </div>
                     <h2 class="card-title">
                         Site Hakkında
                     </h2>
