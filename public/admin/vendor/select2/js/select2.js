@@ -5078,7 +5078,9 @@ S2.define('select2/defaults',[
       debug: false,
       dropdownAutoWidth: false,
       escapeMarkup: Utils.escapeMarkup,
-      language: {},
+      language: {noResults: function () {
+        return "Sonuç bulunamadı";
+      }},
       matcher: matcher,
       minimumInputLength: 0,
       maximumInputLength: 0,

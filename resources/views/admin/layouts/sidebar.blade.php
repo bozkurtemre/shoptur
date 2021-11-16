@@ -23,6 +23,41 @@
                         </a>
                     </li>
 
+                    <!-- Orders -->
+                    <li class="nav-parent">
+                        <a class="nav-link parent-tab" href="javascript:void(0)">
+                            <i class="bx bxs-cart-download" aria-hidden="true"></i>
+                            <span>Siparişler</span>
+                            <span class="badge badge-primary">0</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="javascript:void(0)">
+                                    Tüm Siparişler
+                                    <!-- <span class="badge badge-primary" style="margin-bottom: 5px;">0</span> -->
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript:void(0)">
+                                    Onay Bekleyen Siparişler
+                                    <!-- <span class="badge badge-primary" style="margin-bottom: 5px;">0</span> -->
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript:void(0)">
+                                    İade Edilen Siparişler
+                                    <!-- <span class="badge badge-primary" style="margin-bottom: 5px;">0</span> -->
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript:void(0)">
+                                    Tamamlanan Siparişler
+                                    <!-- <span class="badge badge-primary" style="margin-bottom: 5px;">0</span> -->
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <!-- Store -->
                     <li class="nav-parent">
                         <a class="nav-link parent-tab" href="javascript:void(0)">
@@ -60,6 +95,11 @@
                                     Firmalar
                                 </a>
                             </li>
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Entegrasyonlar
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -68,6 +108,36 @@
                         <a class="nav-link parent-tab" href="javascript:void(0)">
                             <i class="bx bx-customize" aria-hidden="true"></i>
                             <span>Özelleştir</span>
+                        </a>
+                        <ul class="nav nav-children">
+                        </ul>
+                    </li>
+
+                    <!-- Payment -->
+                    <li class="nav-parent">
+                        <a class="nav-link parent-tab" href="javascript:void(0)">
+                            <i class="bx bx-credit-card" aria-hidden="true"></i>
+                            <span>Ödeme</span>
+                        </a>
+                        <ul class="nav nav-children">
+                        </ul>
+                    </li>
+
+                    <!-- Users -->
+                    <li class="nav-parent">
+                        <a class="nav-link parent-tab" href="javascript:void(0)">
+                            <i class="bx bx-user" aria-hidden="true"></i>
+                            <span>Kullanıcılar</span>
+                        </a>
+                        <ul class="nav nav-children">
+                        </ul>
+                    </li>
+
+                    <!-- Reports -->
+                    <li class="nav-parent">
+                        <a class="nav-link parent-tab" href="javascript:void(0)">
+                            <i class="bx bxs-report" aria-hidden="true"></i>
+                            <span>Raporlar</span>
                         </a>
                         <ul class="nav nav-children">
                         </ul>
@@ -142,7 +212,7 @@
                 <div class="widget-content">
                     <ul>
                         <li>
-                            <span class="stats-title">SmartCart</span>
+                            <span class="stats-title">Versiyon</span>
                             <span class="stats-complete">{{ env('APP_VER') }}</span>
                         </li>
                         <li>
