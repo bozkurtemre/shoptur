@@ -230,7 +230,7 @@
                     <div class="right-wrapper text-end" style="margin-right: 25px;">
                         <ol class="breadcrumbs" id="nav-alt-tab">
                             <li>
-                                <a href="#">
+                                <a href="{{ route('admin.dashboard') }}">
                                     <i class="bx bx-home-alt"></i>
                                 </a>
                             </li>
