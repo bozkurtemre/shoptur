@@ -1,14 +1,14 @@
 /*!
- * 
+ *
  * Super simple wysiwyg editor v0.8.18
  * https://summernote.org
- * 
- * 
+ *
+ *
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license.
- * 
+ *
  * Date: 2020-05-20T16:47Z
- * 
+ *
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -7498,54 +7498,6 @@ var Buttons_Buttons = /*#__PURE__*/function () {
     value: function addToolbarButtons() {
       var _this2 = this;
 
-      this.context.memo('button.style', function () {
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.magic), _this2.options),
-          tooltip: _this2.lang.style.style,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdown({
-          className: 'dropdown-style',
-          items: _this2.options.styleTags,
-          title: _this2.lang.style.style,
-          template: function template(item) {
-            // TBD: need to be simplified
-            if (typeof item === 'string') {
-              item = {
-                tag: item,
-                title: Object.prototype.hasOwnProperty.call(_this2.lang.style, item) ? _this2.lang.style[item] : item
-              };
-            }
-
-            var tag = item.tag;
-            var title = item.title;
-            var style = item.style ? ' style="' + item.style + '" ' : '';
-            var className = item.className ? ' class="' + item.className + '"' : '';
-            return '<' + tag + style + className + '>' + title + '</' + tag + '>';
-          },
-          click: _this2.context.createInvokeHandler('editor.formatBlock')
-        })]).render();
-      });
-
-      var _loop = function _loop(styleIdx, styleLen) {
-        var item = _this2.options.styleTags[styleIdx];
-
-        _this2.context.memo('button.style.' + item, function () {
-          return _this2.button({
-            className: 'note-btn-style-' + item,
-            contents: '<div data-value="' + item + '">' + item.toUpperCase() + '</div>',
-            tooltip: _this2.lang.style[item],
-            click: _this2.context.createInvokeHandler('editor.formatBlock')
-          }).render();
-        });
-      };
-
-      for (var styleIdx = 0, styleLen = this.options.styleTags.length; styleIdx < styleLen; styleIdx++) {
-        _loop(styleIdx, styleLen);
-      }
-
       this.context.memo('button.bold', function () {
         return _this2.button({
           className: 'note-btn-bold',
@@ -7568,13 +7520,6 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           contents: _this2.ui.icon(_this2.options.icons.underline),
           tooltip: _this2.lang.font.underline + _this2.representShortcut('underline'),
           click: _this2.context.createInvokeHandlerAndUpdateState('editor.underline')
-        }).render();
-      });
-      this.context.memo('button.clear', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.eraser),
-          tooltip: _this2.lang.font.clear + _this2.representShortcut('removeFormat'),
-          click: _this2.context.createInvokeHandler('editor.removeFormat')
         }).render();
       });
       this.context.memo('button.strikethrough', function () {
@@ -7600,40 +7545,6 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           tooltip: _this2.lang.font.subscript,
           click: _this2.context.createInvokeHandlerAndUpdateState('editor.subscript')
         }).render();
-      });
-      this.context.memo('button.fontname', function () {
-        var styleInfo = _this2.context.invoke('editor.currentStyle');
-
-        if (_this2.options.addDefaultFonts) {
-          // Add 'default' fonts into the fontnames array if not exist
-          external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default.a.each(styleInfo['font-family'].split(','), function (idx, fontname) {
-            fontname = fontname.trim().replace(/['"]+/g, '');
-
-            if (_this2.isFontDeservedToAdd(fontname)) {
-              if (_this2.options.fontNames.indexOf(fontname) === -1) {
-                _this2.options.fontNames.push(fontname);
-              }
-            }
-          });
-        }
-
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontname"></span>', _this2.options),
-          tooltip: _this2.lang.font.name,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdownCheck({
-          className: 'dropdown-fontname',
-          checkClassName: _this2.options.icons.menuCheck,
-          items: _this2.options.fontNames.filter(_this2.isFontInstalled.bind(_this2)),
-          title: _this2.lang.font.name,
-          template: function template(item) {
-            return '<span style="font-family: ' + env.validFontName(item) + '">' + item + '</span>';
-          },
-          click: _this2.context.createInvokeHandlerAndUpdateState('editor.fontName')
-        })]).render();
       });
       this.context.memo('button.fontsize', function () {
         return _this2.ui.buttonGroup([_this2.button({
@@ -7758,70 +7669,11 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           click: _this2.context.createInvokeHandler('editor.lineHeight')
         })]).render();
       });
-      this.context.memo('button.table', function () {
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.table), _this2.options),
-          tooltip: _this2.lang.table.table,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdown({
-          title: _this2.lang.table.table,
-          className: 'note-table',
-          items: ['<div class="note-dimension-picker">', '<div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1"></div>', '<div class="note-dimension-picker-highlighted"></div>', '<div class="note-dimension-picker-unhighlighted"></div>', '</div>', '<div class="note-dimension-display">1 x 1</div>'].join('')
-        })], {
-          callback: function callback($node) {
-            var $catcher = $node.find('.note-dimension-picker-mousecatcher');
-            $catcher.css({
-              width: _this2.options.insertTableMaxSize.col + 'em',
-              height: _this2.options.insertTableMaxSize.row + 'em'
-            }).mousedown(_this2.context.createInvokeHandler('editor.insertTable')).on('mousemove', _this2.tableMoveHandler.bind(_this2));
-          }
-        }).render();
-      });
-      this.context.memo('button.link', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.link),
-          tooltip: _this2.lang.link.link + _this2.representShortcut('linkDialog.show'),
-          click: _this2.context.createInvokeHandler('linkDialog.show')
-        }).render();
-      });
-      this.context.memo('button.picture', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.picture),
-          tooltip: _this2.lang.image.image,
-          click: _this2.context.createInvokeHandler('imageDialog.show')
-        }).render();
-      });
-      this.context.memo('button.video', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.video),
-          tooltip: _this2.lang.video.video,
-          click: _this2.context.createInvokeHandler('videoDialog.show')
-        }).render();
-      });
       this.context.memo('button.hr', function () {
         return _this2.button({
           contents: _this2.ui.icon(_this2.options.icons.minus),
           tooltip: _this2.lang.hr.insert + _this2.representShortcut('insertHorizontalRule'),
           click: _this2.context.createInvokeHandler('editor.insertHorizontalRule')
-        }).render();
-      });
-      this.context.memo('button.fullscreen', function () {
-        return _this2.button({
-          className: 'btn-fullscreen note-codeview-keep',
-          contents: _this2.ui.icon(_this2.options.icons.arrowsAlt),
-          tooltip: _this2.lang.options.fullscreen,
-          click: _this2.context.createInvokeHandler('fullscreen.toggle')
-        }).render();
-      });
-      this.context.memo('button.codeview', function () {
-        return _this2.button({
-          className: 'btn-codeview note-codeview-keep',
-          contents: _this2.ui.icon(_this2.options.icons.code),
-          tooltip: _this2.lang.options.codeview,
-          click: _this2.context.createInvokeHandler('codeview.toggle')
         }).render();
       });
       this.context.memo('button.redo', function () {
@@ -7836,13 +7688,6 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           contents: _this2.ui.icon(_this2.options.icons.undo),
           tooltip: _this2.lang.history.undo + _this2.representShortcut('undo'),
           click: _this2.context.createInvokeHandler('editor.undo')
-        }).render();
-      });
-      this.context.memo('button.help', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.question),
-          tooltip: _this2.lang.options.help,
-          click: _this2.context.createInvokeHandler('helpDialog.show')
         }).render();
       });
     }

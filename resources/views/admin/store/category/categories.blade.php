@@ -42,7 +42,8 @@
                     <td><i class='bx bxs-circle' style="color: {{ $category->status == 1 ? " green;" : "red;" }}"></i>
                         {{ $category->status == 1 ? "Aktif" : "Pasif" }}</td>
                     <td>
-                        <a class="btn-sm btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('admin.category.edit', $category->id) }}" class="btn-sm btn-primary"><i
+                                class="fas fa-pencil-alt"></i></a>
                         <a href="javascript::void(0)" class="btn-sm btn-danger remove-row"><i
                                 class="far fa-trash-alt"></i></a>
                     </td>

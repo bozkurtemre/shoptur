@@ -225,7 +225,7 @@
 
             <section role="main" class="content-body @yield('body-class')">
                 <header class="page-header">
-                    <h2 id="page-header-title"></h2>
+                    <h2 id="page-header-title">@yield('header-title')</h2>
 
                     <div class="right-wrapper text-end" style="margin-right: 25px;">
                         <ol class="breadcrumbs" id="nav-alt-tab">
@@ -234,6 +234,7 @@
                                     <i class="bx bx-home-alt"></i>
                                 </a>
                             </li>
+                            @yield('nav-alt-tab')
                         </ol>
                     </div>
                 </header>

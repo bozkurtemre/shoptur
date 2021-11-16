@@ -34,7 +34,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        //
+        return view('admin.store.category.category-edit', ['category' => $category, 'categories' => $this->category->index()]);
     }
 
     public function update(CategoryRequest $request, Category $category)
@@ -51,5 +51,10 @@ class CategoryController extends Controller
     {
         $category->delete();
         return response()->json(['status' => true, 'message' => 'Kategori başarıyla silindi'], 200);
+    }
+
+    public function test(Request $request)
+    {
+        dd($request);
     }
 }
