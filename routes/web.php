@@ -23,22 +23,24 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('login', [LoginController::class, 'index'])->name('login.index');
-    Route::post('login', [LoginController::class, 'login'])->name('login.post');
-    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('login', [LoginController::class, 'login'])->name('login.index');
+    Route::post('login', [LoginController::class, 'postLogin'])->name('login.post');
 
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::group(['middleware' => 'isAdmin'], function () {
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-    Route::prefix('store')->group(function () {
-        Route::get('categories', [CategoryController::class, 'index'])->name('categories');
-        Route::post('category/store', [CategoryController::class, 'store'])->name('category.store');
-        Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
-        Route::get('category/delete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
-        Route::get('category/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
-        Route::post('category/update/{category}', [CategoryController::class, 'update'])->name('category.update');
-    });
+        Route::prefix('store')->group(function () {
+            Route::get('categories', [CategoryController::class, 'index'])->name('categories');
+            Route::post('category/store', [CategoryController::class, 'store'])->name('category.store');
+            Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
+            Route::get('category/delete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
+            Route::get('category/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+            Route::post('category/update/{category}', [CategoryController::class, 'update'])->name('category.update');
+        });
 
-    Route::prefix('settings')->group(function () {
-        Route::get('logs', [LogController::class, 'index'])->name('logs');
+        Route::prefix('settings')->group(function () {
+            Route::get('logs', [LogController::class, 'index'])->name('logs');
+        });
     });
 });
