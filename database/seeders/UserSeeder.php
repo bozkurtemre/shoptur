@@ -18,8 +18,8 @@ class UserSeeder extends Seeder
         $admin = User::create([
             'name' => 'Admin',
             'username' => 'admin',
-            'email' => 'admin@smartcart.io',
-            'password' => Hash::make('smartcart123')
+            'email' => 'admin@shoptur.io',
+            'password' => Hash::make('shoptur123')
         ]);
         $admin->assignRole('Administrator');
     }
