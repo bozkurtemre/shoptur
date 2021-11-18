@@ -1,12 +1,5 @@
 <p align="center"><a href="https://shoptur.io" target="_blank"><img src="https://raw.githubusercontent.com/emre-bozkurt/shoptur_assets/master/logo-2x.png?token=AISTQCGZIQ4GQSGKNMSOO2DBT7WG4" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
 ## Shoptur
 
 Based on Laravel 8 and PHP 8 modern e-commerce system called Shoptur created by Emre Bozkurt.
