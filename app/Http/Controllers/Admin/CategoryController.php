@@ -19,17 +19,19 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view('admin.store.category.categories', ['categories' => $this->category->index()]);
+        return view('admin.store.category.categories', ['categories' => $this->category->index()])->with(['type' => 'success', 'message' => 'test']);
     }
 
     public function create()
     {
-        //
+        return view('admin.store.category.category-add', ['categories' => $this->category->index()]);
     }
 
     public function store(CategoryRequest $request)
     {
-        //
+        $this->category->store($request);
+
+        return redirect()->route('admin.categories');
     }
 
     public function edit(Category $category)
@@ -39,7 +41,9 @@ class CategoryController extends Controller
 
     public function update(CategoryRequest $request, Category $category)
     {
-        //
+        $this->category->update($request, $category);
+
+        return redirect()->route('admin.categories');
     }
 
     public function status(Category $category)

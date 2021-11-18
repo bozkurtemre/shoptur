@@ -1,23 +1,23 @@
 @extends('admin.layouts.master')
-@section('title', 'Kategori Düzenle')
+@section('title', 'Kategori Ekle')
 @section('css')
 <link rel="stylesheet" href="{{ asset('admin/vendor/select2/css/select2.css') }}" />
 <link rel="stylesheet" href="{{ asset('admin/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
 @endsection
-@section('header-title', 'Kategori Düzenle')
+@section('header-title', 'Kategori Ekle')
 @section('nav-alt-tab')
 <li><span>Kategoriler</span></li>
-<li><span>Kategori Düzenle</span></li>
+<li><span>Kategori Ekle</span></li>
 @endsection
 @section('content')
 <section class="card">
-    <form action="{{ route('admin.category.update', $category->id) }}" method="post">
+    <form action="{{ route('admin.category.store') }}" method="post">
         @csrf
         <header class="card-header">
             <div class="card-actions">
                 <a href="javascript:void(0)" class="card-action card-action-toggle" data-card-toggle></a>
             </div>
-            <h2 class="card-title">{{ $category->name }}</h2>
+            <h2 class="card-title">Yeni Kategori</h2>
         </header>
         <div class="card-body">
             <!-- default / right -->
@@ -41,15 +41,15 @@
                                         Adı</label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control" name="name" id="name"
-                                            value="{{ $category->name }}" required>
+                                            placeholder="Elektronik" required>
                                     </div>
                                 </div>
                                 <div class="pb-4 form-group row">
                                     <label class="pt-2 col-lg-3 control-label text-lg-end" for="description">Kategori
                                         Açıklaması</label>
                                     <div class="col-lg-6">
-                                        <textarea class="form-control" name="description"
-                                            id="description">{{ $category->description }}</textarea>
+                                        <textarea class="form-control" name="description" id="description"
+                                            placeholder="Telefon, Saat, Bilgisayar, Notebook ve Daha fazlası..."></textarea>
                                     </div>
                                 </div>
                                 <div class="pb-4 form-group row">
@@ -58,11 +58,9 @@
                                     <div class="col-lg-6">
                                         <select data-plugin-selectTwo class="form-control populate" name="parent_id"
                                             id="parent_id">
-                                            <option value="" {{ $category->parent_id == null ? 'selected' :
-                                                '' }}>Yok</option>
+                                            <option value="">Yok</option>
                                             @foreach ($categories as $cat)
-                                            <option value="{{ $cat->id }}" {{ $cat->id == $category->parent_id ?
-                                                'selected' : '' }}>{{ $cat->name }}</option>
+                                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -70,8 +68,8 @@
                                 <div class="pb-4 form-group row">
                                     <label class="pt-2 col-lg-3 control-label text-lg-end" for="seq">Sıra</label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" name="seq" id="seq"
-                                            value="{{ $category->seq }}" required>
+                                        <input type="text" class="form-control" name="seq" id="seq" placeholder="0"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -79,10 +77,8 @@
                                     <div class="col-lg-6">
                                         <select data-plugin-selectTwo class="form-control populate" name="status"
                                             id="status" data-minimum-results-for-search="Infinity" required>
-                                            <option value="0" {{ $category->status == 0 ? 'selected' : ''
-                                                }}>Pasif</option>
-                                            <option value="1" {{ $category->status == 1 ? 'selected' : ''
-                                                }}>Aktif</option>
+                                            <option value="0">Pasif</option>
+                                            <option value="1" selected>Aktif</option>
                                         </select>
                                     </div>
                                 </div>
@@ -93,7 +89,7 @@
                                         Title</label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control" name="meta_title" id="meta_title"
-                                            value="{{ $category->meta_title }}">
+                                            placeholder="Elektronik">
                                     </div>
                                 </div>
                                 <div class="pb-4 form-group row">
@@ -101,7 +97,7 @@
                                         Description</label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control" name="meta_desc" id="meta_desc"
-                                            value="{{ $category->meta_desc }}">
+                                            placeholder="Telefon, Saat, Bilgisayar, Notebook ve Daha fazlası...">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -109,7 +105,7 @@
                                         Keywords</label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control" name="meta_keywords" id="meta_keywords"
-                                            value="{{ $category->meta_keywords }}">
+                                            placeholder="Telefon, Saat, Bilgisayar, Notebook">
                                     </div>
                                 </div>
                             </div>

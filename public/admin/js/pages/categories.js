@@ -92,11 +92,11 @@
                                         url: '/admin/store/category/delete/' + itemId,
                                         method: 'GET',
                                         success: function (data) {
-                                            toastr.success(data.message, 'SmartCart');
+                                            toastr.success(data.message, 'Sistem');
                                             _self.rowRemove($row);
                                         },
                                         error: function () {
-                                            toastr.error(data.message, 'SmartCart');
+                                            toastr.error(data.message, 'Sistem');
                                         }
                                     });
                                     $.magnificPopup.close();

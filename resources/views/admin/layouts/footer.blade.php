@@ -17,6 +17,7 @@
 <script src="{{ asset('admin/js/theme.js') }}"></script>
 
 <!-- Theme Custom -->
+@include('admin.layouts.toastr')
 <script src="{{ asset('admin/js/custom.js') }}"></script>
 
 <!-- Theme Initialization Files -->

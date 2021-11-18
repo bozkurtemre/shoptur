@@ -13,7 +13,7 @@ class CategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'description' => 'nullable',
+            'parent_id' => 'nullable',
+            'seq' => 'nullable',
+            'status' => 'required|int',
+            'meta_title' => 'nullable|string',
+            'meta_desc' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
         ];
     }
 }
