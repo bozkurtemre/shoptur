@@ -110,6 +110,11 @@
                             <span>Özelleştir</span>
                         </a>
                         <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Temalar
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -120,6 +125,11 @@
                             <span>Ödeme</span>
                         </a>
                         <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Entegrasyonlar
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -130,6 +140,16 @@
                             <span>Kullanıcılar</span>
                         </a>
                         <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Listele
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Profil
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -140,6 +160,11 @@
                             <span>Raporlar</span>
                         </a>
                         <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Siparişler
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -171,34 +196,31 @@
                     <ul>
                         <li>
                             <span class="stats-title">Tamamlanan Sipariş</span>
-                            <span class="stats-complete">85%</span>
+                            <span class="stats-complete">0%</span>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary progress-without-number"
-                                    role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 85%;">
-                                    <span class="sr-only">85% Complete</span>
+                                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                                    style="width: 0%;">
                                 </div>
                             </div>
                         </li>
                         <li>
                             <span class="stats-title">Onay Bekleyen Sipariş</span>
-                            <span class="stats-complete">70%</span>
+                            <span class="stats-complete">0%</span>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary progress-without-number"
-                                    role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 70%;">
-                                    <span class="sr-only">70% Complete</span>
+                                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                                    style="width: 0%;">
                                 </div>
                             </div>
                         </li>
                         <li>
                             <span class="stats-title">İptal Edilen Sipariş</span>
-                            <span class="stats-complete">2%</span>
+                            <span class="stats-complete">0%</span>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary progress-without-number"
-                                    role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 2%;">
-                                    <span class="sr-only">2% Complete</span>
+                                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                                    style="width: 0%;">
                                 </div>
                             </div>
                         </li>
@@ -213,7 +235,7 @@
                     <ul>
                         <li>
                             <span class="stats-title">Versiyon</span>
-                            <span class="stats-complete">{{ env('APP_VER') }}</span>
+                            <span class="stats-complete">{{ config('app.version') }}</span>
                         </li>
                         <li>
                             <span class="stats-title">PHP</span>

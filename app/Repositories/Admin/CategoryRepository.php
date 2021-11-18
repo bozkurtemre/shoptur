@@ -20,11 +20,11 @@ class CategoryRepository
 
     public function store($request)
     {
-        //
+        return $this->category->create($request->all());
     }
 
     public function update($request, $category)
     {
-        //
+        return $category->update($request->all());
     }
 }

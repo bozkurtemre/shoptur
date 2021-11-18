@@ -17,11 +17,12 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-3">
-                    <button class="btn btn-primary">Ekle <i class="fas fa-plus"></i></button>
+                    <a href="{{ route('admin.category.create') }}"><button class="btn btn-primary">Ekle <i
+                                class="fas fa-plus"></i></button></a>
                 </div>
             </div>
         </div>
-        <table class="table table-bordered table-striped mb-0" id="datatable-categories">
+        <table class="table mb-0 table-bordered table-striped" id="datatable-categories">
             <thead>
                 <tr>
                     <th>#</th>
