@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="https://gitcdn.link/cdn/emre-bozkurt/shoptur_assets/master/logo-2x.png" width="400"></a></p>
+<p align="center"><a href="https://shoptur.io" target="_blank"><img src="https://gitcdn.link/cdn/emre-bozkurt/shoptur_assets/master/logo-2x.png" width="400"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
