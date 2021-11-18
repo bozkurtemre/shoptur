@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap/css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/vendor/font-awesome/css/all.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/vendor/boxicons/css/boxicons.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/vendor/toastr/toastr.min.css') }}" />
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('admin/css/theme.css') }}" />
@@ -38,10 +39,10 @@
     <section class="body-sign">
         <div class="center-sign">
             <a href="javascript::void(0)" class="float-left">
-                <img src="{{ asset('admin/img/logo.png') }}" height="54" alt="SmartCart" />
+                <img src="{{ asset('admin/img/logo.png') }}" height="75" alt="shoptur" />
             </a>
 
-            <div class="panel card-sign">
+            <div class="mt-2 panel card-sign">
                 <div class="card-title-sign text-end">
                     <h2 class="m-0 title text-uppercase font-weight-bold"><i
                             class="bx bx-user-circle me-1 text-6 position-relative top-5"></i> Giriş Yap</h2>
@@ -95,12 +96,15 @@
     <script src="{{ asset('admin/vendor/jquery/jquery.js') }}"></script>
     <script src="{{ asset('admin/vendor/jquery-browser-mobile/jquery.browser.mobile.js') }}"></script>
     <script src="{{ asset('admin/vendor/nanoscroller/nanoscroller.js') }}"></script>
+    <script src="{{ asset('admin/vendor/toastr/toastr.min.js') }}"></script>
 
     <!-- Theme Base, Components and Settings -->
     <script src="{{ asset('admin/js/theme.js') }}"></script>
 
     <!-- Theme Initialization Files -->
     <script src="{{ asset('admin/js/theme.init.js') }}"></script>
+
+    @toastr_render
 
 </body>
 

@@ -4007,7 +4007,8 @@ html.dark .inner-menu .inner-menu-toggle-inside:after {
 
 .header .logo {
     float: left;
-    margin: 10px 0 0 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
 }
 
 .header .logo img {

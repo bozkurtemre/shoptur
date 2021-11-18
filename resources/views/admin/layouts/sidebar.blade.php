@@ -142,7 +142,12 @@
                         <ul class="nav nav-children">
                             <li>
                                 <a class="nav-link" href="javascript::void(0)">
-                                    Listele
+                                    Müşteriler
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Yetkililer
                                 </a>
                             </li>
                             <li>
@@ -163,6 +168,16 @@
                             <li>
                                 <a class="nav-link" href="javascript::void(0)">
                                     Siparişler
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Kargo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="javascript::void(0)">
+                                    Ürünler
                                 </a>
                             </li>
                         </ul>

@@ -2,3 +2,7 @@
 .float-left {
     float: left !important;
 }
+
+.float-left.logo {
+    margin-bottom: 15px;
+}

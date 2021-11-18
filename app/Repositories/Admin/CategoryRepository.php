@@ -27,4 +27,9 @@ class CategoryRepository
     {
         return $category->update($request->all());
     }
+
+    public function success($message)
+    {
+        return toastr()->success($message, 'Sistem');
+    }
 }
