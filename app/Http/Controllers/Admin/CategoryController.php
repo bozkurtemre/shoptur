@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view('admin.store.category.categories', ['categories' => $this->category->index()])->with(['type' => 'success', 'message' => 'test']);
+        return view('admin.store.category.categories', ['categories' => $this->category->index()]);
     }
 
     public function create()
@@ -30,7 +30,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $this->category->store($request);
-
+        $this->category->success('Kategori Başarıyla Eklendi');
         return redirect()->route('admin.categories');
     }
 
@@ -42,7 +42,7 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, Category $category)
     {
         $this->category->update($request, $category);
-
+        $this->category->success('Kategori Başarıyla Güncellendi');
         return redirect()->route('admin.categories');
     }
 
@@ -54,7 +54,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return response()->json(['status' => true, 'message' => 'Kategori başarıyla silindi'], 200);
+        return response()->json(['status' => true, 'message' => 'Kategori Başarıyla Silindi'], 200);
     }
 
     public function test(Request $request)

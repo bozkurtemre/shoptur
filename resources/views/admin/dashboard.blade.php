@@ -10,7 +10,7 @@
 <section class="body">
     <!-- start: page -->
     <div class="row">
-        <div class="col-lg-6 mb-3">
+        <div class="mb-3 col-lg-6">
             <section class="card">
                 <div class="card-body">
                     <div class="row">
@@ -26,7 +26,7 @@
                                     </strong>
                                 </h2>
 
-                                <div id="salesSelectorItems" class="chart-data-selector-items mt-3">
+                                <div id="salesSelectorItems" class="mt-3 chart-data-selector-items">
                                     <div class="chart chart-sm" data-sales-rel="week" id="flotDashSales1"
                                         class="chart-active" style="height: 190px;"></div>
                                     <script>
@@ -71,9 +71,9 @@
             </section>
         </div>
         <div class="col-lg-6">
-            <div class="row mb-3">
+            <div class="mb-3 row">
                 <div class="col-xl-6">
-                    <section class="card card-featured-left card-featured-primary mb-3">
+                    <section class="mb-3 card card-featured-left card-featured-primary">
                         <div class="card-body">
                             <div class="widget-summary">
                                 <div class="widget-summary-col widget-summary-col-icon">
@@ -123,7 +123,7 @@
             </div>
             <div class="row">
                 <div class="col-xl-6">
-                    <section class="card card-featured-left card-featured-primary mb-3">
+                    <section class="mb-3 card card-featured-left card-featured-primary">
                         <div class="card-body">
                             <div class="widget-summary">
                                 <div class="widget-summary-col widget-summary-col-icon">
@@ -168,14 +168,14 @@
         </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="mb-3 row">
         <div class="col-xl-12">
             <section class="card">
                 <header class="card-header card-header-transparent">
                     <h2 class="card-title">Son Siparişler</h2>
                 </header>
                 <div class="card-body">
-                    <table class="table table-responsive-md table-striped mb-0">
+                    <table class="table mb-0 table-responsive-md table-striped">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -204,15 +204,15 @@
                     <h2 class="card-title">Son Aktiviteler</h2>
                 </header>
                 <div class="card-body">
-                    <div class="timeline timeline-simple mt-3 mb-3">
+                    <div class="mt-3 mb-3 timeline timeline-simple">
                         <div class="tm-body">
                             <div class="tm-title">
-                                <h5 class="m-0 pt-2 pb-2 text-uppercase">Aralık 2021</h5>
+                                <h5 class="pt-2 pb-2 m-0 text-uppercase">Aralık 2021</h5>
                             </div>
                             <ol class="tm-items">
                                 <li>
                                     <div class="tm-box">
-                                        <!-- <p class="text-muted mb-0">1 saat önce</p> -->
+                                        <!-- <p class="mb-0 text-muted">1 saat önce</p> -->
                                         <p>Site Kuruldu.</p>
                                     </div>
                                 </li>

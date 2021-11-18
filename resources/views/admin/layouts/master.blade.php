@@ -23,7 +23,7 @@
         <header class="header">
             <div class="logo-container">
                 <a href="{{ route('admin.dashboard') }}" class="logo">
-                    <img src="{{ asset('admin/img/logo.png') }}" width="75" height="35" alt="Porto Admin" />
+                    <img src="{{ asset('admin/img/logo.png') }}" width="110" height="50" alt="shoptur" />
                 </a>
 
                 <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
@@ -199,6 +199,8 @@
     </section>
 
     @include('admin.layouts.footer')
+
+    @toastr_render
 
 </body>
 

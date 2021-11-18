@@ -26,8 +26,10 @@ class LoginController extends Controller
         ]);
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
+            toastr()->success('Hoşgeldiniz, ' . Auth::user()->name, 'Sistem');
             return redirect()->intended('/admin/dashboard');
         }
+        toastr()->error('Kullanıcı Adı veya Şifre Hatalı!');
         return redirect()->route('admin.login.index');
     }
 
