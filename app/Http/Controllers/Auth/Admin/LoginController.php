@@ -2,23 +2,41 @@
 
 namespace App\Http\Controllers\Auth\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function login()
     {
-        return view('admin.auth.login');
+        if (Auth::check()) {
+            return redirect()->route('admin.dashboard');
+        } else {
+            return view('admin.auth.login');
+        }
     }
 
-    public function login(Request $request)
+    public function postLogin(Request $request)
     {
-        dd($request->all());
+        request()->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        $credentials = $request->only('username', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('/admin/dashboard');
+        }
+        return redirect()->route('admin.login.index');
     }
 
     public function logout()
     {
-        //
+        if (Auth::check()) {
+            Session::flush();
+            Auth::logout();
+            return redirect()->route('admin.login.index');
+        }
     }
 }

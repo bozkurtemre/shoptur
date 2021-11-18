@@ -141,8 +141,8 @@
                                 data-lock-picture="{{ asset('admin/img/!logged-user.jpg') }}" />
                         </figure>
                         <div class="profile-info">
-                            <span class="name">Test User</span>
-                            <span class="role">Administrator</span>
+                            <span class="name">{{ Auth::user()->name }}</span>
+                            <span class="role">{{ Auth::user()->getUserRole() }}</span>
                         </div>
 
                         <i class="fa custom-caret"></i>
@@ -152,13 +152,13 @@
                         <ul class="mb-2 list-unstyled">
                             <li class="divider"></li>
                             <li>
-                                <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i
-                                        class="bx bx-user-circle"></i> My Profile</a>
+                                <a role="menuitem" tabindex="-1" href="javascript::void(0)"><i
+                                        class="bx bx-user-circle"></i> Profilim</a>
                             </li>
                             <li>
-                                <a role="menuitem" tabindex="-1" href="pages-signin.html"><i
+                                <a role="menuitem" tabindex="-1" href="{{ route('admin.logout') }}"><i
                                         class="bx bx-power-off"></i>
-                                    Logout</a>
+                                    Oturumu Kapat</a>
                             </li>
                         </ul>
                     </div>

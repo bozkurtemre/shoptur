@@ -147,7 +147,7 @@
                             </li>
                             <li>
                                 <a class="nav-link" href="javascript::void(0)">
-                                    Profil
+                                    Gruplar
                                 </a>
                             </li>
                         </ul>

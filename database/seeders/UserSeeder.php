@@ -15,11 +15,12 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $admin = User::create([
             'name' => 'Admin',
             'username' => 'admin',
             'email' => 'admin@smartcart.io',
             'password' => Hash::make('smartcart123')
         ]);
+        $admin->assignRole('Administrator');
     }
 }
