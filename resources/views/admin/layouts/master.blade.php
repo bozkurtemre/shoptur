@@ -137,7 +137,7 @@
                 <div id="userbox" class="userbox">
                     <a href="#" data-bs-toggle="dropdown">
                         <figure class="profile-picture">
-                            <img src="{{ asset('admin/img/!logged-user.jpg') }}" alt="Joseph Doe" class="rounded-circle"
+                            <img src="{{ asset('admin/img/logo-sm.jpg') }}" alt="Joseph Doe" class="rounded-circle"
                                 data-lock-picture="{{ asset('admin/img/!logged-user.jpg') }}" />
                         </figure>
                         <div class="profile-info">
