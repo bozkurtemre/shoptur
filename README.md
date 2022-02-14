@@ -1,4 +1,4 @@
-<p align="center"><a href="https://shoptur.io" target="_blank"><img src="https://raw.githubusercontent.com/emre-bozkurt/shoptur_assets/master/logo-2x.png?token=AISTQCGZIQ4GQSGKNMSOO2DBT7WG4" width="400"></a></p>
+<p align="center"><a href="https://shoptur.io" target="_blank"><img src="https://raw.githubusercontent.com/emre-bozkurt/shoptur_assets/master/logo-2x.png" width="400"></a></p>
 
 ## Shoptur
 
